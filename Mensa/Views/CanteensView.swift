@@ -115,7 +115,7 @@ struct CanteensView: View {
             
             HStack(spacing: 12){
                 VStack(alignment: .leading, spacing: 4){
-                    Text("Öffnugnszeiten")
+                    Text("Öffnungszeiten")
                     Text("Gerade geschlossen")
                 }
                 .foregroundColor(.primary)
