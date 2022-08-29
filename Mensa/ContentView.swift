@@ -37,6 +37,9 @@ struct ContentView: View {
         }
         .accentColor(.red)
         .onChange(of: selectedTab){ newValue in
+            globalStore.animateView = false
+            globalStore.animateContent = false
+            globalStore.currentCanteen = nil
             globalStore.showDetailView = false
         }
     }

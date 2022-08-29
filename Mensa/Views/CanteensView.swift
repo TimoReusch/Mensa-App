@@ -8,15 +8,10 @@
 import SwiftUI
 
 struct CanteensView: View {
-    @State var currentCanteen: CanteenItem?
     @EnvironmentObject private var globalStore: GlobalStore
     
     // Matched Geometry Effect
     @Namespace var animation
-    
-    // Detail Animation Properties
-    @State var animateView: Bool = false
-    @State var animateContent: Bool = false
     @State var scrollOffset: CGFloat = 0
     
     let statusBarModifier = NavigationBarModifier(backgroundColor: .systemBackground)
@@ -51,21 +46,21 @@ struct CanteensView: View {
                 ForEach(canteens) { item in
                     Button {
                         withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)){
-                            currentCanteen = item
+                            globalStore.currentCanteen = item
                             globalStore.showDetailView = true
                         }
                     } label: {
                         CardView(item: item)
-                            .scaleEffect(currentCanteen?.id == item.id && globalStore.showDetailView ? 1 : 0.93)
+                            .scaleEffect(globalStore.currentCanteen?.id == item.id && globalStore.showDetailView ? 1 : 0.93)
                     }
                     .buttonStyle(ScaledButtonStyle())
-                    .opacity(globalStore.showDetailView ? (currentCanteen?.id == item.id ? 1 : 0) : 1)
+                    .opacity(globalStore.showDetailView ? (globalStore.currentCanteen?.id == item.id ? 1 : 0) : 1)
                 }
             }
         }
         .modifier(statusBarModifier)
         .overlay {
-            if let currentItem = currentCanteen, globalStore.showDetailView {
+            if let currentItem = globalStore.currentCanteen, globalStore.showDetailView {
                 DetailView(item: currentItem)
                     .ignoresSafeArea(.container, edges: .top)
             }
@@ -73,8 +68,8 @@ struct CanteensView: View {
         .background(alignment: .top){
             RoundedRectangle(cornerRadius: 15, style: .continuous)
                 .fill(Color("BG"))
-                .frame(height: animateView ? nil : 250, alignment: .top)
-                .opacity(animateView ? 1 : 0)
+                .frame(height: globalStore.animateView ? nil : 250, alignment: .top)
+                .opacity(globalStore.animateView ? 1 : 0)
                 .ignoresSafeArea()
         }
         //.background(Color.primary.opacity(0.06).ignoresSafeArea())
@@ -115,7 +110,7 @@ struct CanteensView: View {
                 }
                 .foregroundColor(.white)
                 .padding()
-                .offset(y: currentCanteen?.id == item.id && animateView ? safeArea().top : 0)
+                .offset(y: globalStore.currentCanteen?.id == item.id && globalStore.animateView ? safeArea().top : 0)
             }
             
             HStack(spacing: 12){
@@ -145,7 +140,7 @@ struct CanteensView: View {
         ScrollView(.vertical, showsIndicators: false){
             VStack{
                 CardView(item: item)
-                    .scaleEffect(animateView ? 1 : 0.93)
+                    .scaleEffect(globalStore.animateView ? 1 : 0.93)
                 
                 VStack(spacing: 15){
                     // Dummy text
@@ -158,8 +153,8 @@ struct CanteensView: View {
                 }
                 .padding()
                 .offset(y: scrollOffset > 0 ? scrollOffset : 0)
-                .opacity(animateContent ? 1 : 0)
-                .scaleEffect(animateView ? 1 : 0, anchor: .top)
+                .opacity(globalStore.animateContent ? 1 : 0)
+                .scaleEffect(globalStore.animateView ? 1 : 0, anchor: .top)
             }
             //.offset(y: scrollOffset > 0 ? -scrollOffset : 0)
             //.offset(offset: $scrollOffset)
@@ -168,12 +163,12 @@ struct CanteensView: View {
             Button{
                 // Close view
                 withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)){
-                    animateView = false
-                    animateContent = false
+                    globalStore.animateView = false
+                    globalStore.animateContent = false
                 }
                 
                 withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7).delay(0.05)){
-                    currentCanteen = nil
+                    globalStore.currentCanteen = nil
                     globalStore.showDetailView = false
                 }
             } label: {
@@ -184,15 +179,15 @@ struct CanteensView: View {
             .padding()
             .padding(.top, safeArea().top)
             //.offset(y: -10)
-            .opacity(animateView ? 1 : 0)
+            .opacity(globalStore.animateView ? 1 : 0)
         })
         .onAppear{
             withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)){
-                animateView = true
+                globalStore.animateView = true
             }
             
             withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7).delay(0.1)){
-                animateContent = true
+                globalStore.animateContent = true
             }
         }
         .transition(.identity)
