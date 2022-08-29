@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CanteensView: View {
     @State var currentCanteen: CanteenItem?
-    
     @EnvironmentObject private var globalStore: GlobalStore
     
     // Matched Geometry Effect
@@ -26,18 +25,24 @@ struct CanteensView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
             VStack(spacing: 0){
-                HStack(alignment: .bottom){
-                    Text("Mensen")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .padding(.top)
-                    
-                    Spacer()
-                    
-                    Button(action: {}){
-                        Image(systemName: "arrow.up.arrow.down")
-                            .font(.title2)
+                VStack{
+                    HStack(alignment: .bottom){
+                        Text("Mensen")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .padding(.top)
+                        
+                        Spacer()
+                        
+                        Button(action: {}){
+                            Image(systemName: "arrow.up.arrow.down")
+                                .font(.title2)
+                        }
                     }
+                    Text("in Würzburg")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(.secondary)
                 }
                 .padding(.horizontal)
                 .padding(.bottom)
