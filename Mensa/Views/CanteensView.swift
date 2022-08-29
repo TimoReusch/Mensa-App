@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CanteensView: View {
     @State var currentCanteen: CanteenItem?
-    @State var showDetailPage: Bool = false
+    @EnvironmentObject private var globalStore: GlobalStore
     
     // Matched Geometry Effect
     @Namespace var animation
@@ -19,42 +19,53 @@ struct CanteensView: View {
     @State var animateContent: Bool = false
     @State var scrollOffset: CGFloat = 0
     
+    let statusBarModifier = NavigationBarModifier(backgroundColor: .systemBackground)
+        
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
             VStack(spacing: 0){
-                HStack(alignment: .bottom){
-                    Text("Mensen")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                    
-                    Spacer()
-                    
-                    Button(action: {}){
-                        Image(systemName: "arrow.up.arrow.down")
-                            .font(.title2)
+                VStack{
+                    HStack(alignment: .bottom){
+                        Text("Mensen")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .padding(.top)
+                        
+                        Spacer()
+                        
+                        Button(action: {}){
+                            Image(systemName: "arrow.up.arrow.down")
+                                .font(.title2)
+                        }
                     }
+                    Text("in Würzburg")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .foregroundColor(.secondary)
                 }
                 .padding(.horizontal)
                 .padding(.bottom)
-                .opacity(showDetailPage ? 0 : 1)
+                .opacity(globalStore.showDetailView ? 0 : 1)
                 
                 ForEach(canteens) { item in
                     Button {
                         withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)){
                             currentCanteen = item
-                            showDetailPage = true
+                            globalStore.showDetailView = true
                         }
                     } label: {
                         CardView(item: item)
-                            .scaleEffect(currentCanteen?.id == item.id && showDetailPage ? 1 : 0.93)
+                            .scaleEffect(currentCanteen?.id == item.id && globalStore.showDetailView ? 1 : 0.93)
                     }
                     .buttonStyle(ScaledButtonStyle())
-                    .opacity(showDetailPage ? (currentCanteen?.id == item.id ? 1 : 0) : 1)
+                    .opacity(globalStore.showDetailView ? (currentCanteen?.id == item.id ? 1 : 0) : 1)
                 }
             }
         }
+        .modifier(statusBarModifier)
         .overlay {
-            if let currentItem = currentCanteen, showDetailPage {
+            if let currentItem = currentCanteen, globalStore.showDetailView {
                 DetailView(item: currentItem)
                     .ignoresSafeArea(.container, edges: .top)
             }
@@ -91,6 +102,7 @@ struct CanteensView: View {
                     .black.opacity(0.2),
                     .clear
                 ], startPoint: .top, endPoint: .bottom)
+                .clipShape(CustomCorner(corners: [.topLeft, .topRight], radius: 15))
                 
                 VStack(alignment: .leading, spacing: 5){
                     Text("Mensateria")
@@ -108,7 +120,7 @@ struct CanteensView: View {
             
             HStack(spacing: 12){
                 VStack(alignment: .leading, spacing: 4){
-                    Text("Öffnugnszeiten")
+                    Text("Öffnungszeiten")
                     Text("Gerade geschlossen")
                 }
                 .foregroundColor(.primary)
@@ -120,8 +132,12 @@ struct CanteensView: View {
         .background{
             RoundedRectangle(cornerRadius: 15, style: .continuous)
                 .fill(Color("BG"))
+                .if(!globalStore.showDetailView) {
+                    $0.shadow(radius: 5)
+                }
         }
         .matchedGeometryEffect(id: item.id, in: animation)
+        .statusBar(hidden: globalStore.showDetailView)
     }
     
     // Detail View
@@ -145,8 +161,8 @@ struct CanteensView: View {
                 .opacity(animateContent ? 1 : 0)
                 .scaleEffect(animateView ? 1 : 0, anchor: .top)
             }
-            .offset(y: scrollOffset > 0 ? -scrollOffset : 0)
-            .offset(offset: $scrollOffset)
+            //.offset(y: scrollOffset > 0 ? -scrollOffset : 0)
+            //.offset(offset: $scrollOffset)
         }
         .overlay(alignment: .topTrailing, content: {
             Button{
@@ -158,7 +174,7 @@ struct CanteensView: View {
                 
                 withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7).delay(0.05)){
                     currentCanteen = nil
-                    showDetailPage = false
+                    globalStore.showDetailView = false
                 }
             } label: {
                 Image(systemName: "xmark.circle.fill")
@@ -167,7 +183,7 @@ struct CanteensView: View {
             }
             .padding()
             .padding(.top, safeArea().top)
-            .offset(y: -10)
+            //.offset(y: -10)
             .opacity(animateView ? 1 : 0)
         })
         .onAppear{
@@ -186,7 +202,7 @@ struct CanteensView: View {
 struct CanteensView_Previews: PreviewProvider {
     static var previews: some View {
         CanteensView()
-            .preferredColorScheme(.dark)
+            .preferredColorScheme(.light)
     }
 }
 
@@ -235,5 +251,13 @@ struct OffsetKey: PreferenceKey{
     
     static func reduce(value: inout CGFloat, nextValue: () -> CGFloat) {
         value = nextValue()
+    }
+}
+
+extension View {
+    @ViewBuilder
+    func `if`<Transform: View>(_ condition: Bool, transform: (Self) -> Transform) -> some View {
+        if condition { transform(self) }
+        else { self }
     }
 }

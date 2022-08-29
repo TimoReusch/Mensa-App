@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4B3B67C128BAEDC300525DCE /* CanteenItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B67C028BAEDC300525DCE /* CanteenItem.swift */; };
 		4B3B67C328BAF28300525DCE /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B67C228BAF28300525DCE /* CustomCorner.swift */; };
+		4B3B67C528BC231D00525DCE /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B67C428BC231D00525DCE /* NavigationBarModifier.swift */; };
+		4B3B67C728BC372F00525DCE /* GlobalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B67C628BC372F00525DCE /* GlobalStore.swift */; };
 		4B82784F28B7B58700E27584 /* MensaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82784E28B7B58700E27584 /* MensaApp.swift */; };
 		4B82785128B7B58700E27584 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82785028B7B58700E27584 /* ContentView.swift */; };
 		4B82785328B7B58800E27584 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B82785228B7B58800E27584 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 /* Begin PBXFileReference section */
 		4B3B67C028BAEDC300525DCE /* CanteenItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenItem.swift; sourceTree = "<group>"; };
 		4B3B67C228BAF28300525DCE /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
+		4B3B67C428BC231D00525DCE /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
+		4B3B67C628BC372F00525DCE /* GlobalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStore.swift; sourceTree = "<group>"; };
 		4B82784B28B7B58700E27584 /* Mensa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mensa.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B82784E28B7B58700E27584 /* MensaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaApp.swift; sourceTree = "<group>"; };
 		4B82785028B7B58700E27584 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				4B3B67C028BAEDC300525DCE /* CanteenItem.swift */,
+				4B3B67C628BC372F00525DCE /* GlobalStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				4B82787D28B7B76B00E27584 /* FavoriteView.swift */,
 				4B82787F28B7B77700E27584 /* SettingsView.swift */,
 				4B3B67C228BAF28300525DCE /* CustomCorner.swift */,
+				4B3B67C428BC231D00525DCE /* NavigationBarModifier.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,7 +299,9 @@
 			files = (
 				4B82785128B7B58700E27584 /* ContentView.swift in Sources */,
 				4B3B67C328BAF28300525DCE /* CustomCorner.swift in Sources */,
+				4B3B67C528BC231D00525DCE /* NavigationBarModifier.swift in Sources */,
 				4B82787C28B7B73F00E27584 /* CafeteriasView.swift in Sources */,
+				4B3B67C728BC372F00525DCE /* GlobalStore.swift in Sources */,
 				4B3B67C128BAEDC300525DCE /* CanteenItem.swift in Sources */,
 				4B82784F28B7B58700E27584 /* MensaApp.swift in Sources */,
 				4B82788028B7B77700E27584 /* SettingsView.swift in Sources */,

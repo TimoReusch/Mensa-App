@@ -8,25 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selectedTab = 1
+    
+    @EnvironmentObject private var globalStore: GlobalStore
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             CanteensView()
                 .tabItem {
                     Label("Mensen", systemImage: "fork.knife")
                 }
+                .tag(1)
             CafeteriasView()
                 .tabItem {
                     Label("Cafeterien", systemImage: "cup.and.saucer.fill")
                 }
+                .tag(2)
             FavoriteView()
                 .tabItem {
                     Label("Lieblingsmensa", systemImage: "heart.fill")
                 }
+                .tag(3)
             SettingsView()
                 .tabItem {
                     Label("Einstellungen", systemImage: "gear")
                 }
-        }.accentColor(.red)
+                .tag(4)
+        }
+        .accentColor(.red)
+        .onChange(of: selectedTab){ newValue in
+            globalStore.showDetailView = false
+        }
     }
 }
 
