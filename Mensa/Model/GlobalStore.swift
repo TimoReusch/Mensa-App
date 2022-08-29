@@ -8,5 +8,12 @@
 import Foundation
 
 class GlobalStore: ObservableObject {
+    // Canteens
+    @Published var currentCanteen: CanteenItem?
+    
     @Published var showDetailView: Bool = false
+    
+    // Detail Animation Properties
+    @Published var animateView: Bool = false
+    @Published var animateContent: Bool = false
 }
