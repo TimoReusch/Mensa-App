@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct FavoriteView: View {
+    @EnvironmentObject private var globalStore: GlobalStore
+    
     var body: some View {
-        Text("Liebelingsmensa")
+        VStack{
+            LottieView(filename: "19705-chef", loop: true).frame(height: 400, alignment: .center)
+            
+            Text("Sieht so aus, als hättest du noch keine Lieblingsmensa festgelegt. Du kannst dies in den Einstellungen tun.")
+                .font(.callout)
+                .multilineTextAlignment(.center)
+                .foregroundColor(.secondary)
+                .padding()
+            
+            Button{
+                globalStore.selectedTab = 4
+            } label: {
+                Text("Zu den Einstellungen")
+            }
+            .padding(.top)
+        }
     }
 }
 

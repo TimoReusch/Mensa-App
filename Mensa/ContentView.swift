@@ -8,12 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selectedTab = 1
-    
     @EnvironmentObject private var globalStore: GlobalStore
     
     var body: some View {
-        TabView(selection: $selectedTab) {
+        TabView(selection: $globalStore.selectedTab) {
             CanteensView()
                 .tabItem {
                     Label("Mensen", systemImage: "fork.knife")
@@ -36,7 +34,7 @@ struct ContentView: View {
                 .tag(4)
         }
         .accentColor(.red)
-        .onChange(of: selectedTab){ newValue in
+        .onChange(of: globalStore.selectedTab){ newValue in
             globalStore.animateView = false
             globalStore.animateContent = false
             globalStore.currentCanteen = nil

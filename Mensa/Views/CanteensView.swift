@@ -21,19 +21,11 @@ struct CanteensView: View {
         ScrollView(.vertical, showsIndicators: false){
             VStack(spacing: 0){
                 VStack{
-                    HStack(alignment: .bottom){
-                        Text("Mensen")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                            .padding(.top)
-                        
-                        Spacer()
-                        
-                        Button(action: {}){
-                            Image(systemName: "arrow.up.arrow.down")
-                                .font(.title2)
-                        }
-                    }
+                    Text("Mensen")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.top)
                     Text("in Würzburg")
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -93,8 +85,8 @@ struct CanteensView: View {
                 .frame(height: 300)
                 
                 LinearGradient(colors: [
-                    .black.opacity(0.5),
-                    .black.opacity(0.2),
+                    .black.opacity(0.3),
+                    .black.opacity(0.1),
                     .clear
                 ], startPoint: .top, endPoint: .bottom)
                 .clipShape(CustomCorner(corners: [.topLeft, .topRight], radius: 15))

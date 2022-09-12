@@ -16,4 +16,6 @@ class GlobalStore: ObservableObject {
     // Detail Animation Properties
     @Published var animateView: Bool = false
     @Published var animateContent: Bool = false
+    
+    @Published var selectedTab: Int = 3
 }
