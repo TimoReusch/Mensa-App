@@ -14,58 +14,97 @@ struct CanteensView: View {
     @Namespace var animation
     @State var scrollOffset: CGFloat = 0
     
+    @State private var isLoading = false;
+    @State private var showingAlert = false
+    
+    @State private var canteens = [CanteenItem]()
+    
     let statusBarModifier = NavigationBarModifier(backgroundColor: .systemBackground)
-        
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false){
-            VStack(spacing: 0){
-                VStack{
-                    Text("Mensen")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.top)
-                    Text("in Würzburg")
-                        .font(.headline)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .foregroundColor(.secondary)
-                }
-                .padding(.horizontal)
-                .padding(.bottom)
-                .opacity(globalStore.showDetailView ? 0 : 1)
-                
-                ForEach(canteens) { item in
-                    Button {
-                        withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)){
-                            globalStore.currentCanteen = item
-                            globalStore.showDetailView = true
-                        }
-                    } label: {
-                        CardView(item: item)
-                            .scaleEffect(globalStore.currentCanteen?.id == item.id && globalStore.showDetailView ? 1 : 0.93)
+        ZStack{
+            ScrollView(.vertical, showsIndicators: false){
+                VStack(spacing: 0){
+                    VStack{
+                        Text("Mensen")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.top)
+                        Text("in Würzburg")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .foregroundColor(.secondary)
                     }
-                    .buttonStyle(ScaledButtonStyle())
-                    .opacity(globalStore.showDetailView ? (globalStore.currentCanteen?.id == item.id ? 1 : 0) : 1)
+                    .padding(.horizontal)
+                    .padding(.bottom)
+                    .opacity(globalStore.showDetailView ? 0 : 1)
+                    
+                    ForEach(canteens, id: \.id) { item in
+                        Button {
+                            withAnimation(.interactiveSpring(response: 0.6, dampingFraction: 0.7, blendDuration: 0.7)){
+                                globalStore.currentCanteen = item
+                                globalStore.showDetailView = true
+                            }
+                        } label: {
+                            CardView(item: item)
+                                .scaleEffect(globalStore.currentCanteen?.id == item.id && globalStore.showDetailView ? 1 : 0.93)
+                        }
+                        .buttonStyle(ScaledButtonStyle())
+                        .opacity(globalStore.showDetailView ? (globalStore.currentCanteen?.id == item.id ? 1 : 0) : 1)
+                    }
                 }
             }
-        }
-        .modifier(statusBarModifier)
-        .overlay {
-            if let currentItem = globalStore.currentCanteen, globalStore.showDetailView {
-                DetailView(item: currentItem)
-                    .ignoresSafeArea(.container, edges: .top)
+            .modifier(statusBarModifier)
+            .overlay {
+                if let currentItem = globalStore.currentCanteen, globalStore.showDetailView {
+                    DetailView(item: currentItem)
+                        .ignoresSafeArea(.container, edges: .top)
+                }
+            }
+            .background(alignment: .top){
+                RoundedRectangle(cornerRadius: 15, style: .continuous)
+                    .fill(Color("BG"))
+                    .frame(height: globalStore.animateView ? nil : 250, alignment: .top)
+                    .opacity(globalStore.animateView ? 1 : 0)
+                    .ignoresSafeArea()
+            }
+            .alert("Netzwerkfehler - Daten können nicht geladen werden.", isPresented: $showingAlert) {
+                Button("OK", role: .cancel) { }
+            }
+            //.background(Color.primary.opacity(0.06).ignoresSafeArea())
+            
+            if(isLoading){
+                ProgressView()
             }
         }
-        .background(alignment: .top){
-            RoundedRectangle(cornerRadius: 15, style: .continuous)
-                .fill(Color("BG"))
-                .frame(height: globalStore.animateView ? nil : 250, alignment: .top)
-                .opacity(globalStore.animateView ? 1 : 0)
-                .ignoresSafeArea()
+        .task {
+            await fetchData()
         }
-        //.background(Color.primary.opacity(0.06).ignoresSafeArea())
     }
+    
+    func fetchData() async {
+        isLoading = true
+        guard let url = URL(string: apiBase + "canteens") else {
+            print("Invalid URL")
+            return
+        }
+        // fetch data
+        do {
+            let(data, _) = try await URLSession.shared.data(from: url)
+            
+            // decode
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(CanteensResponse.self, from: data)
+            canteens = result.data
+
+        } catch let error {
+            print(error)
+            showingAlert = true
+        }
+        isLoading = false
+    }
+    
     
     // CardView
     @ViewBuilder
@@ -76,7 +115,7 @@ struct CanteensView: View {
                 GeometryReader{proxy in
                     let size = proxy.size
                     
-                    Image(item.mensaImage)
+                    Image(item.name)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: size.width, height: 300)
@@ -92,11 +131,11 @@ struct CanteensView: View {
                 .clipShape(CustomCorner(corners: [.topLeft, .topRight], radius: 15))
                 
                 VStack(alignment: .leading, spacing: 5){
-                    Text("Mensateria")
+                    Text(splitName(name: item.name)[0])
                         .font(.callout)
                         .fontWeight(.semibold)
                     
-                    Text(item.title)
+                    Text(splitName(name: item.name)[1])
                         .font(.largeTitle.bold())
                         .multilineTextAlignment(.leading)
                 }
@@ -107,8 +146,11 @@ struct CanteensView: View {
             
             HStack(spacing: 12){
                 VStack(alignment: .leading, spacing: 4){
-                    Text("Öffnungszeiten")
-                    Text("Gerade geschlossen")
+                    todaysOpeningHours(openingHours: item.openingHours)
+                    .lineSpacing(10)
+                    if(item.additionalInfo != ""){
+                        Text(item.additionalInfo)
+                    }
                 }
                 .foregroundColor(.primary)
                 .frame(maxWidth: .infinity, alignment: .leading)

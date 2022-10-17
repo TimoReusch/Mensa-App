@@ -18,4 +18,6 @@ class GlobalStore: ObservableObject {
     @Published var animateContent: Bool = false
     
     @Published var selectedTab: Int = 3
+    
+    @Published var baseURL: String = "http://localhost:8080/"
 }

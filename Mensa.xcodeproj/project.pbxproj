@@ -10,7 +10,8 @@
 		4B1184BA28C01BD200CD8275 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1184B928C01BD200CD8275 /* Settings.swift */; };
 		4B1184BD28C0274700CD8275 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4B1184BC28C0274700CD8275 /* Lottie */; };
 		4B1184C028C0291100CD8275 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1184BF28C0291100CD8275 /* LottieView.swift */; };
-		4B3B67C128BAEDC300525DCE /* CanteenItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B67C028BAEDC300525DCE /* CanteenItem.swift */; };
+		4B331CE928F2FA20005B9E5C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B331CE828F2FA20005B9E5C /* Utils.swift */; };
+		4B3B67C128BAEDC300525DCE /* Canteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B67C028BAEDC300525DCE /* Canteen.swift */; };
 		4B3B67C328BAF28300525DCE /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B67C228BAF28300525DCE /* CustomCorner.swift */; };
 		4B3B67C528BC231D00525DCE /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B67C428BC231D00525DCE /* NavigationBarModifier.swift */; };
 		4B3B67C728BC372F00525DCE /* GlobalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B67C628BC372F00525DCE /* GlobalStore.swift */; };
@@ -49,7 +50,8 @@
 /* Begin PBXFileReference section */
 		4B1184B928C01BD200CD8275 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		4B1184BF28C0291100CD8275 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		4B3B67C028BAEDC300525DCE /* CanteenItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenItem.swift; sourceTree = "<group>"; };
+		4B331CE828F2FA20005B9E5C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		4B3B67C028BAEDC300525DCE /* Canteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canteen.swift; sourceTree = "<group>"; };
 		4B3B67C228BAF28300525DCE /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
 		4B3B67C428BC231D00525DCE /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		4B3B67C628BC372F00525DCE /* GlobalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStore.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		4B82787B28B7B73F00E27584 /* CafeteriasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeteriasView.swift; sourceTree = "<group>"; };
 		4B82787D28B7B76B00E27584 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		4B82787F28B7B77700E27584 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4BA2ABB028F0962000D108C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,12 +109,20 @@
 			path = LottieAnimations;
 			sourceTree = "<group>";
 		};
+		4B331CEC28F4C923005B9E5C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		4B3B67BF28BAECFB00525DCE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4B3B67C028BAEDC300525DCE /* CanteenItem.swift */,
+				4B3B67C028BAEDC300525DCE /* Canteen.swift */,
 				4B3B67C628BC372F00525DCE /* GlobalStore.swift */,
 				4B1184B928C01BD200CD8275 /* Settings.swift */,
+				4B331CE828F2FA20005B9E5C /* Utils.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,6 +150,7 @@
 		4B82784D28B7B58700E27584 /* Mensa */ = {
 			isa = PBXGroup;
 			children = (
+				4BA2ABB028F0962000D108C4 /* Info.plist */,
 				4B3B67BF28BAECFB00525DCE /* Model */,
 				4B82787828B7B71300E27584 /* Views */,
 				4B82784E28B7B58700E27584 /* MensaApp.swift */,
@@ -177,6 +189,7 @@
 		4B82787828B7B71300E27584 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4B331CEC28F4C923005B9E5C /* Components */,
 				4B1184BE28C028F900CD8275 /* LottieAnimations */,
 				4B82787928B7B73200E27584 /* CanteensView.swift */,
 				4B82787B28B7B73F00E27584 /* CafeteriasView.swift */,
@@ -329,10 +342,11 @@
 				4B82785128B7B58700E27584 /* ContentView.swift in Sources */,
 				4B3B67C328BAF28300525DCE /* CustomCorner.swift in Sources */,
 				4B3B67C528BC231D00525DCE /* NavigationBarModifier.swift in Sources */,
+				4B331CE928F2FA20005B9E5C /* Utils.swift in Sources */,
 				4B82787C28B7B73F00E27584 /* CafeteriasView.swift in Sources */,
 				4B53EF2128CEA6D3004A17B8 /* AboutView.swift in Sources */,
 				4B3B67C728BC372F00525DCE /* GlobalStore.swift in Sources */,
-				4B3B67C128BAEDC300525DCE /* CanteenItem.swift in Sources */,
+				4B3B67C128BAEDC300525DCE /* Canteen.swift in Sources */,
 				4B82784F28B7B58700E27584 /* MensaApp.swift in Sources */,
 				4B82788028B7B77700E27584 /* SettingsView.swift in Sources */,
 				4B82787E28B7B76B00E27584 /* FavoriteView.swift in Sources */,
@@ -500,6 +514,7 @@
 				DEVELOPMENT_TEAM = ZQ9QM5K92D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mensa/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -529,6 +544,7 @@
 				DEVELOPMENT_TEAM = ZQ9QM5K92D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mensa/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
