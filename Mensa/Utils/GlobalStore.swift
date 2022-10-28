@@ -17,7 +17,7 @@ class GlobalStore: ObservableObject {
     @Published var animateView: Bool = false
     @Published var animateContent: Bool = false
     
-    @Published var selectedTab: Int = 3
+    @Published var selectedTab: Int = 4
     
     @Published var baseURL: String = "http://localhost:8080/"
 }

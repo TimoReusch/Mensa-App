@@ -9,8 +9,8 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @State private var price: Price = .student
-    @State private var location: Location = .wuerzburg
+    @AppStorage("userStatus") private var price = "priceStudent"
+    @AppStorage("userLocation") private var location = "Würzburg"
     
     var body: some View {
         NavigationStack{
@@ -19,17 +19,17 @@ struct SettingsView: View {
                     Section(header: Text("Allgemeines")){
                         List {
                             Picker("💸 Preise", selection: $price) {
-                                Text("Student").tag(Price.student)
-                                Text("Beschäftigter").tag(Price.employee)
-                                Text("Gast").tag(Price.guest)
+                                Text("Student").tag("priceStudent")
+                                Text("Beschäftigter").tag("priceEmployee")
+                                Text("Gast").tag("priceGuest")
                             }
                         }
                         List {
                             Picker("📍 Studienort", selection: $location) {
-                                Text("Würzburg").tag(Location.wuerzburg)
-                                Text("Schweinfurt").tag(Location.schweinfurt)
-                                Text("Bamberg").tag(Location.bamberg)
-                                Text("Aschaffenburg").tag(Location.aschaffenburg)
+                                Text("Würzburg").tag("Würzburg")
+                                Text("Schweinfurt").tag("Schweinfurt")
+                                Text("Bamberg").tag("Bamberg")
+                                Text("Aschaffenburg").tag("Aschaffenburg")
                             }
                         }
                     }
