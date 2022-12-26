@@ -60,12 +60,16 @@ struct Card: View {
                 VStack(alignment: .leading, spacing: 4){
                     LazyVGrid(columns: columns, spacing: 10){
                         Image(systemName: "clock")
-                        Text("\(todaysOpeningHours.opensAt) - \(todaysOpeningHours.closesAt) Uhr")
-                            .lineSpacing(10)
-                        
-                        Text("\(Image(systemName: "fork.knife"))")
-                        Text("Essensausgabe bis \(todaysOpeningHours.getFoodTill) Uhr")
-                        
+                        if(todaysOpeningHours.isOpen){
+                            Text("\(todaysOpeningHours.opensAt) - \(todaysOpeningHours.closesAt) Uhr")
+                                .lineSpacing(10)
+                            
+                            Text("\(Image(systemName: "fork.knife"))")
+                            Text("Essensausgabe bis \(todaysOpeningHours.getFoodTill) Uhr")
+                        } else {
+                            Text("Geschlossen")
+                        }
+                            
                         if(additionalInfo != ""){
                             Image(systemName: "info.bubble")
                                 .foregroundColor(.red)

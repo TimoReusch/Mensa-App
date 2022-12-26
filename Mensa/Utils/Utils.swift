@@ -6,23 +6,31 @@
 //
 
 import Foundation
-import SwiftUI
 
-/*
-func todaysOpeningHours(openingHours: [OpeningHoursItem]) -> Text{
+func todaysOpeningHours(openingHours: OpeningHours) -> OpeningHoursItem{
     let dateFormatter = DateFormatter()
     dateFormatter.locale = Locale(identifier: "de-DE")
     // We only want the weekday
     dateFormatter.setLocalizedDateFormatFromTemplate("EEEE")
     let weekday = dateFormatter.string(from: Date())
-    for item in openingHours {
-        if(item.weekday == weekday){
-            if(item.isOpened == false){
-                break
-            }
-            return Text("\(Image(systemName: "clock"))  \(item.opensAt) - \(item.closesAt) Uhr\nEssensausgabe bis \(item.getFoodTill) Uhr")
-        }
+    
+    switch weekday {
+    case "Montag":
+        return openingHours.monday
+        
+    case "Dienstag":
+        return openingHours.tuesday
+        
+    case "Mittwoch":
+        return openingHours.wednesday
+        
+    case "Donnerstag":
+        return openingHours.thursday
+        
+    case "Freitag":
+        return openingHours.friday
+        
+    default:
+        return OpeningHoursItem(id: UUID(), opensAt: "", closesAt: "", getFoodTill: "", isOpen: false)
     }
-    return Text("Geschlossen")
 }
-*/

@@ -22,7 +22,7 @@ struct CanteensView: View {
                         NavigationLink(value: canteen){
                             Card(type: canteen.type,
                                  title: canteen.name,
-                                 todaysOpeningHours: canteen.openingHours.monday,
+                                 todaysOpeningHours: todaysOpeningHours(openingHours: canteen.openingHours),
                                  additionalInfo: canteen.additionalInfo,
                                  pictureId: canteen.firebaseId
                             )
