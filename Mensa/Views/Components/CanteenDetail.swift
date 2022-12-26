@@ -31,11 +31,11 @@ struct CanteenDetail: View {
                 ], startPoint: .top, endPoint: .bottom)
                 
                 VStack(alignment: .leading, spacing: 5){
-                    Text(splitName(name: canteen.name)[0])
+                    Text("Type")
                         .font(.callout)
                         .fontWeight(.semibold)
                     
-                    Text(splitName(name: canteen.name)[1])
+                    Text("Title")
                         .font(.largeTitle.bold())
                         .multilineTextAlignment(.leading)
                 }

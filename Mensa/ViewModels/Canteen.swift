@@ -9,6 +9,7 @@ import Foundation
 
 struct Canteen: Identifiable, Hashable {
     var id: UUID
+    var firebaseId: Int
     var name: String
     var location: String
     var type: String
@@ -16,7 +17,7 @@ struct Canteen: Identifiable, Hashable {
     var additionalInfo: String
     var address: String
     var description_de: String
-    var hours_mon: [Any]
+    var openingHours: OpeningHours
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(address)

@@ -8,7 +8,18 @@
 import SwiftUI
 
 struct Card: View {
+    var type: String
     var title: String
+    var todaysOpeningHours: OpeningHoursItem
+    var additionalInfo: String
+    var pictureId: Int
+    
+    let columns = [
+        GridItem(.fixed(22), alignment: .center),
+        GridItem(.flexible(), alignment: .leading)
+        ]
+    
+    let pictureHeight: CGFloat = 250
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15){
@@ -17,27 +28,27 @@ struct Card: View {
                 GeometryReader{proxy in
                     let size = proxy.size
                     
-                    Image("hubland-nord")
+                    Image("\(pictureId)")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: size.width, height: 300)
+                        .frame(width: size.width, height: pictureHeight)
                         .clipShape(CustomCorner(corners: [.topLeft, .topRight], radius: 15))
                 }
-                .frame(height: 300)
+                .frame(height: pictureHeight)
                 
                 LinearGradient(colors: [
-                    .black.opacity(0.3),
+                    .black.opacity(0.5),
                     .black.opacity(0.1),
                     .clear
                 ], startPoint: .top, endPoint: .bottom)
                 .clipShape(CustomCorner(corners: [.topLeft, .topRight], radius: 15))
                 
                 VStack(alignment: .leading, spacing: 5){
-                    Text(splitName(name: title)[0])
+                    Text(type)
                         .font(.callout)
                         .fontWeight(.semibold)
                     
-                    Text(splitName(name: title)[1])
+                    Text(title)
                         .font(.largeTitle.bold())
                         .multilineTextAlignment(.leading)
                 }
@@ -47,13 +58,21 @@ struct Card: View {
             
             HStack(spacing: 12){
                 VStack(alignment: .leading, spacing: 4){
-                    Text("openinghours")
-                    //todaysOpeningHours(openingHours: item.openingHours)
-                        .lineSpacing(10)
-                    Text("additionalInfo")
-                    //if(item.additionalInfo != ""){
-                    //    Text(item.additionalInfo)
-                    //}
+                    LazyVGrid(columns: columns, spacing: 10){
+                        Image(systemName: "clock")
+                        Text("\(todaysOpeningHours.opensAt) - \(todaysOpeningHours.closesAt) Uhr")
+                            .lineSpacing(10)
+                        
+                        Text("\(Image(systemName: "fork.knife"))")
+                        Text("Essensausgabe bis \(todaysOpeningHours.getFoodTill) Uhr")
+                        
+                        if(additionalInfo != ""){
+                            Image(systemName: "info.bubble")
+                                .foregroundColor(.red)
+                            Text("\(additionalInfo)")
+                                .foregroundColor(.red)
+                        }
+                    }
                 }
                 .foregroundColor(.primary)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -83,6 +102,6 @@ struct CustomCorner: Shape {
 
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
-        Card(title: "Test")
+        Card(type: "Mensa", title: "Mensastraße", todaysOpeningHours: OpeningHoursItem(id: UUID(), opensAt: "10:00", closesAt: "12:00", getFoodTill: "11:30", isOpen: true), additionalInfo: "Wegen Krankheit geschlossen", pictureId: 10)
     }
 }

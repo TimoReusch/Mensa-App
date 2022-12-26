@@ -20,8 +20,12 @@ struct CanteensView: View {
                 LazyVGrid(columns: columns){
                     ForEach(model.canteens) { canteen in
                         NavigationLink(value: canteen){
-                            Card(title: canteen.name)
-                                .buttonStyle(PlainButtonStyle())
+                            Card(type: canteen.type,
+                                 title: canteen.name,
+                                 todaysOpeningHours: canteen.openingHours.monday,
+                                 additionalInfo: canteen.additionalInfo,
+                                 pictureId: canteen.firebaseId
+                            )
                         }
                     }
                 }
