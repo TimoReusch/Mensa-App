@@ -8,7 +8,7 @@
 import Foundation
 
 struct OpeningHours: Identifiable {
-    var id: Int
+    var id: UUID
     var weekday: String
     var opensAt: String
     var closesAt: String

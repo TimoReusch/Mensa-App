@@ -24,6 +24,7 @@ func splitName(name: String) -> [String]{
     return [type, String(rest)]
 }
 
+/*
 func todaysOpeningHours(openingHours: [OpeningHoursItem]) -> Text{
     let dateFormatter = DateFormatter()
     dateFormatter.locale = Locale(identifier: "de-DE")
@@ -40,3 +41,4 @@ func todaysOpeningHours(openingHours: [OpeningHoursItem]) -> Text{
     }
     return Text("Geschlossen")
 }
+*/
