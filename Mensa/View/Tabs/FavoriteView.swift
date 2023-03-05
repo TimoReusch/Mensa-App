@@ -22,11 +22,7 @@ struct FavoriteView: View {
     
     var body: some View {
          VStack{
-             List(model.canteens) { canteen in
-                 VStack{
-                     Text(canteen.name)
-                 }
-             }
+            
              
              
              /*
@@ -46,10 +42,6 @@ struct FavoriteView: View {
          .padding(.top)
              */
          }
-    }
-    
-    init() {
-        model.getCanteens(location: "Würzburg")
     }
 }
 
