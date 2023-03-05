@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4B1184C028C0291100CD8275 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1184BF28C0291100CD8275 /* LottieView.swift */; };
-		4B331CE928F2FA20005B9E5C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B331CE828F2FA20005B9E5C /* Utils.swift */; };
+		4B32A24A295A837A003629AA /* RectPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B32A249295A837A003629AA /* RectPreference.swift */; };
+		4B32A24C295A83A8003629AA /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B32A24B295A83A8003629AA /* SegmentedControlView.swift */; };
+		4B32A24E295A83C7003629AA /* UnderlineModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B32A24D295A83C7003629AA /* UnderlineModifier.swift */; };
+		4B32A255295A8D2E003629AA /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B32A254295A8D2E003629AA /* Meal.swift */; };
+		4B331CE928F2FA20005B9E5C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B331CE828F2FA20005B9E5C /* Helpers.swift */; };
 		4B33930C290CAB1200A3B458 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B33930B290CAB1200A3B458 /* GoogleService-Info.plist */; };
 		4B33930D290CAB1200A3B458 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B33930B290CAB1200A3B458 /* GoogleService-Info.plist */; };
 		4B33930E290CAB1200A3B458 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B33930B290CAB1200A3B458 /* GoogleService-Info.plist */; };
@@ -61,7 +65,11 @@
 
 /* Begin PBXFileReference section */
 		4B1184BF28C0291100CD8275 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
-		4B331CE828F2FA20005B9E5C /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		4B32A249295A837A003629AA /* RectPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectPreference.swift; sourceTree = "<group>"; };
+		4B32A24B295A83A8003629AA /* SegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
+		4B32A24D295A83C7003629AA /* UnderlineModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineModifier.swift; sourceTree = "<group>"; };
+		4B32A254295A8D2E003629AA /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		4B331CE828F2FA20005B9E5C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		4B33930B290CAB1200A3B458 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4B33930F290CABF500A3B458 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		4B3B67C628BC372F00525DCE /* GlobalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalStore.swift; sourceTree = "<group>"; };
@@ -129,22 +137,73 @@
 			path = LottieAnimations;
 			sourceTree = "<group>";
 		};
+		4B32A246295A8308003629AA /* SegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				4B32A249295A837A003629AA /* RectPreference.swift */,
+				4B32A24B295A83A8003629AA /* SegmentedControlView.swift */,
+				4B32A24D295A83C7003629AA /* UnderlineModifier.swift */,
+			);
+			path = SegmentedControl;
+			sourceTree = "<group>";
+		};
+		4B32A250295A8B9B003629AA /* Canteens */ = {
+			isa = PBXGroup;
+			children = (
+				4BBA03AF29591E0E00833437 /* CanteensView.swift */,
+				4BBA03B32959279B00833437 /* Card.swift */,
+				4BBA03B12959223B00833437 /* CanteenDetail.swift */,
+				4B32A254295A8D2E003629AA /* Meal.swift */,
+			);
+			path = Canteens;
+			sourceTree = "<group>";
+		};
+		4B32A251295A8BDA003629AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4B3B67BF28BAECFB00525DCE /* DataModels */,
+				4BBD4BF3290B3D2400676191 /* ViewModels */,
+				4BBD4BF4290B3D5D00676191 /* Utils */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4B32A252295A8C9A003629AA /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				4B32A250295A8B9B003629AA /* Canteens */,
+				4B82787B28B7B73F00E27584 /* CafeteriasView.swift */,
+				4B82787D28B7B76B00E27584 /* FavoriteView.swift */,
+				4B32A253295A8CB0003629AA /* Settings */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		4B32A253295A8CB0003629AA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4B82787F28B7B77700E27584 /* SettingsView.swift */,
+				4B53EF2028CEA6D3004A17B8 /* AboutView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		4B331CEC28F4C923005B9E5C /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				4BBA03B12959223B00833437 /* CanteenDetail.swift */,
-				4BBA03B32959279B00833437 /* Card.swift */,
+				4B1184BE28C028F900CD8275 /* LottieAnimations */,
+				4B32A246295A8308003629AA /* SegmentedControl */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		4B3B67BF28BAECFB00525DCE /* Models */ = {
+		4B3B67BF28BAECFB00525DCE /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
 				4BBD4BF6290B3DA900676191 /* Canteen.swift */,
 				4BBD4BF8290B3E6D00676191 /* OpeningHours.swift */,
 			);
-			path = Models;
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 		4B82784228B7B58700E27584 = {
@@ -172,10 +231,8 @@
 			children = (
 				4B33930B290CAB1200A3B458 /* GoogleService-Info.plist */,
 				4BA2ABB028F0962000D108C4 /* Info.plist */,
-				4BBD4BF4290B3D5D00676191 /* Utils */,
-				4BBD4BF3290B3D2400676191 /* ViewModels */,
-				4B3B67BF28BAECFB00525DCE /* Models */,
-				4B82787828B7B71300E27584 /* Views */,
+				4B32A251295A8BDA003629AA /* Model */,
+				4B82787828B7B71300E27584 /* View */,
 				4B82784E28B7B58700E27584 /* MensaApp.swift */,
 				4B82785028B7B58700E27584 /* ContentView.swift */,
 				4B82785228B7B58800E27584 /* Assets.xcassets */,
@@ -209,18 +266,13 @@
 			path = MensaUITests;
 			sourceTree = "<group>";
 		};
-		4B82787828B7B71300E27584 /* Views */ = {
+		4B82787828B7B71300E27584 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4B32A252295A8C9A003629AA /* Tabs */,
 				4B331CEC28F4C923005B9E5C /* Components */,
-				4B1184BE28C028F900CD8275 /* LottieAnimations */,
-				4B82787B28B7B73F00E27584 /* CafeteriasView.swift */,
-				4B82787D28B7B76B00E27584 /* FavoriteView.swift */,
-				4B82787F28B7B77700E27584 /* SettingsView.swift */,
-				4B53EF2028CEA6D3004A17B8 /* AboutView.swift */,
-				4BBA03AF29591E0E00833437 /* CanteensView.swift */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		4BBD4BF3290B3D2400676191 /* ViewModels */ = {
@@ -235,7 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				4B3B67C628BC372F00525DCE /* GlobalStore.swift */,
-				4B331CE828F2FA20005B9E5C /* Utils.swift */,
+				4B331CE828F2FA20005B9E5C /* Helpers.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -388,7 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B82785128B7B58700E27584 /* ContentView.swift in Sources */,
-				4B331CE928F2FA20005B9E5C /* Utils.swift in Sources */,
+				4B331CE928F2FA20005B9E5C /* Helpers.swift in Sources */,
 				4B82787C28B7B73F00E27584 /* CafeteriasView.swift in Sources */,
 				4BBA03B029591E0E00833437 /* CanteensView.swift in Sources */,
 				4B53EF2128CEA6D3004A17B8 /* AboutView.swift in Sources */,
@@ -396,10 +448,14 @@
 				4B3B67C728BC372F00525DCE /* GlobalStore.swift in Sources */,
 				4BBA03B42959279B00833437 /* Card.swift in Sources */,
 				4B82784F28B7B58700E27584 /* MensaApp.swift in Sources */,
+				4B32A255295A8D2E003629AA /* Meal.swift in Sources */,
+				4B32A24E295A83C7003629AA /* UnderlineModifier.swift in Sources */,
 				4B82788028B7B77700E27584 /* SettingsView.swift in Sources */,
+				4B32A24A295A837A003629AA /* RectPreference.swift in Sources */,
 				4B82787E28B7B76B00E27584 /* FavoriteView.swift in Sources */,
 				4B1184C028C0291100CD8275 /* LottieView.swift in Sources */,
 				4BBD4BF9290B3E6D00676191 /* OpeningHours.swift in Sources */,
+				4B32A24C295A83A8003629AA /* SegmentedControlView.swift in Sources */,
 				4BBD4BF7290B3DA900676191 /* Canteen.swift in Sources */,
 				4BBA03B22959223B00833437 /* CanteenDetail.swift in Sources */,
 			);

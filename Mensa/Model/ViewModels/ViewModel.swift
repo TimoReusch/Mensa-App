@@ -10,10 +10,13 @@ import FirebaseFirestore
 
 class ViewModel: ObservableObject {
     @Published var canteens = [Canteen]()
+    @Published var meals = [Meal]()
     
     func getCanteens(location: String?){
         let db = Firestore.firestore()
-        var query: Query = db.collection("foodProviders").whereField("category", isEqualTo: "Canteen").whereField("name", isNotEqualTo: "Sprachenzentrum")
+        var query: Query = db
+            .collection("foodProviders")
+            .whereField("category", isEqualTo: "Canteen")
         if(location != nil){
             query = query.whereField("location", in: [location!])
         }
@@ -51,6 +54,7 @@ class ViewModel: ObservableObject {
                             return Canteen(
                                 id: UUID(),
                                 firebaseId: d["id"] as? Int ?? 0,
+                                documentId: d.documentID,
                                 name: d["name"] as? String ?? "",
                                 location: d["location"] as? String ?? "",
                                 type: d["type"] as? String ?? "",

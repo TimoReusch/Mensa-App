@@ -34,3 +34,34 @@ func todaysOpeningHours(openingHours: OpeningHours) -> OpeningHoursItem{
         return OpeningHoursItem(id: UUID(), opensAt: "", closesAt: "", getFoodTill: "", isOpen: false)
     }
 }
+
+// Takes the canteen name in the format "Mensa Campus Hubland Nord" and converts it to "mensa_campus_hubland_nord".
+func convertToSnakeCase(text: String) -> String{
+    var result: String = ""
+    
+    for char in text.lowercased(){
+        switch char{
+        case "ä":
+            result.append("ae")
+            
+        case "ö":
+            result.append("oe")
+            
+        case "ü":
+            result.append("ue")
+            
+        case " ":
+            result.append("_")
+            
+        case "-":
+            result.append("_")
+            
+        case "ß":
+            result.append("ss")
+        
+        default:
+            result.append(char)
+        }
+    }
+    return result
+}

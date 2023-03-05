@@ -10,6 +10,7 @@ import Foundation
 struct Canteen: Identifiable, Hashable {
     var id: UUID
     var firebaseId: Int
+    var documentId: String
     var name: String
     var location: String
     var type: String

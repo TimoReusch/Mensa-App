@@ -12,11 +12,11 @@ struct Card: View {
     var title: String
     var todaysOpeningHours: OpeningHoursItem
     var additionalInfo: String
-    var pictureId: Int
+    var imageName: String
     
     let columns = [
-        GridItem(.fixed(22), alignment: .center),
-        GridItem(.flexible(), alignment: .leading)
+        GridItem(.flexible(maximum: 20), alignment: .top),
+        GridItem(.flexible(), alignment: .topLeading)
         ]
     
     let pictureHeight: CGFloat = 250
@@ -28,7 +28,7 @@ struct Card: View {
                 GeometryReader{proxy in
                     let size = proxy.size
                     
-                    Image("\(pictureId)")
+                    Image("\(imageName)")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: size.width, height: pictureHeight)
@@ -64,7 +64,7 @@ struct Card: View {
                             Text("\(todaysOpeningHours.opensAt) - \(todaysOpeningHours.closesAt) Uhr")
                                 .lineSpacing(10)
                             
-                            Text("\(Image(systemName: "fork.knife"))")
+                            Image(systemName: "fork.knife")
                             Text("Essensausgabe bis \(todaysOpeningHours.getFoodTill) Uhr")
                         } else {
                             Text("Geschlossen")
@@ -75,6 +75,7 @@ struct Card: View {
                                 .foregroundColor(.red)
                             Text("\(additionalInfo)")
                                 .foregroundColor(.red)
+                                .multilineTextAlignment(.leading)
                         }
                     }
                 }
@@ -106,6 +107,6 @@ struct CustomCorner: Shape {
 
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
-        Card(type: "Mensa", title: "Mensastraße", todaysOpeningHours: OpeningHoursItem(id: UUID(), opensAt: "10:00", closesAt: "12:00", getFoodTill: "11:30", isOpen: true), additionalInfo: "Wegen Krankheit geschlossen", pictureId: 10)
+        Card(type: "Mensa", title: "Mensastraße", todaysOpeningHours: OpeningHoursItem(id: UUID(), opensAt: "10:00", closesAt: "12:00", getFoodTill: "11:30", isOpen: true), additionalInfo: "Wegen Krankheit geschlossen", imageName: "burse_am_studentenhaus_wuerzburg")
     }
 }

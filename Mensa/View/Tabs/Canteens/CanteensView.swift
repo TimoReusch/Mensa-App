@@ -24,7 +24,7 @@ struct CanteensView: View {
                                  title: canteen.name,
                                  todaysOpeningHours: todaysOpeningHours(openingHours: canteen.openingHours),
                                  additionalInfo: canteen.additionalInfo,
-                                 pictureId: canteen.firebaseId
+                                 imageName: convertToSnakeCase(text: canteen.documentId)
                             )
                         }
                     }
