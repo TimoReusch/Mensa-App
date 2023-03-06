@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FeedView: View {
     @State private var showSettings = false
+    @State private var showAbout = false
     
     var body: some View {
         NavigationStack{
@@ -28,9 +29,13 @@ struct FeedView: View {
                 CanteenDetail(canteen: canteen)
             }
             .navigationBarItems(
-                leading: Image("App Logo")
+                leading: Button(action: {
+                    self.showAbout.toggle()
+                }, label: {
+                    Image("App Logo")
                     .resizable()
-                    .frame(width: 25.0, height: 25.0),
+                    .frame(width: 25.0, height: 25.0)
+                }),
                 trailing: Button(action: {
                     self.showSettings.toggle()
                 }, label: {
@@ -38,6 +43,9 @@ struct FeedView: View {
                 }))
             .sheet(isPresented: $showSettings){
                 SettingsView(showSettings: $showSettings)
+            }
+            .sheet(isPresented: $showAbout) {
+                AboutView(showAbout: $showAbout)
             }
         }
     }

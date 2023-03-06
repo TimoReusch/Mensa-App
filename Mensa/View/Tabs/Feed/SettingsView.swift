@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Binding var showSettings: Bool
+    
     @AppStorage("userStatus") private var price = "priceStudent"
     @AppStorage("userLocation") private var location = "Würzburg"
     
@@ -16,7 +17,7 @@ struct SettingsView: View {
         NavigationStack{
             VStack{
                 Form{
-                    Section(header: Text("Allgemeines")){
+                    Section(){
                         List {
                             Picker("💸 Preise", selection: $price) {
                                 Text("Student").tag("priceStudent")
@@ -26,23 +27,21 @@ struct SettingsView: View {
                         }
                     }
                     Section(header: Text("Hier schmeckt's am besten"),
-                            footer: Text("Du kannst hier die Mensa auswählen, die du meistens besuchst. Der Menüplan wird dir dann im \"Lieblingsmensa\"-Tab (welches auch die Startseite der App ist), sowie dem Homescreen-Widget angezeigt.")){
+                            footer: Text("Du kannst hier die Mensen & Cafeterien auswählen, die du meistens besuchst. Die heutigen Menüs und Öffnungszeiten werden dir dann in deinem Feed angezeigt. Mit einem Klick auf die jeweilige Mensa/Cafeteria erhältst du eine Detailansicht mit weiteren Informationen (z.B. Auslastung, Menüplan & Öffnungszeiten für die komplette Woche).")){
                         NavigationLink{
                             
                         } label: {
-                            Text("♥️ Lieblingsmensa")
+                            Text("🍽️ Meine Mensen")
                         }
-                    }
-                    Section(){
                         NavigationLink{
-                            AboutView()
+                            
                         } label: {
-                            Text("Über das Projekt")
+                            Text("☕️ Meine Cafeterien")
                         }
                     }
                 }
             }
-            .navigationTitle("Einstellungen")
+            .navigationTitle("Filter")
             .navigationBarItems(
                 trailing: Button(action: {
                     self.showSettings.toggle()
@@ -53,7 +52,7 @@ struct SettingsView: View {
     }
 }
 
-struct BindingViewExamplePreviewContainer_2 : View {
+struct BindingViewSettingsViewContainer : View {
      @State
      private var value = false
 
@@ -63,9 +62,9 @@ struct BindingViewExamplePreviewContainer_2 : View {
 }
 
 #if DEBUG
-struct BindingViewExample_2_Previews : PreviewProvider {
+struct BindingViewSettingsViewContainer_Previews : PreviewProvider {
     static var previews: some View {
-        BindingViewExamplePreviewContainer_2()
+        BindingViewSettingsViewContainer()
     }
 }
 #endif

@@ -11,10 +11,7 @@ struct ContentView: View {
     @EnvironmentObject private var globalStore: GlobalStore
     
     var body: some View {
-        TabView(selection: $globalStore.selectedTab) {
-            
-        }
-        .tint(.red) // Accent Color
+        FeedView()
     }
 }
 
