@@ -19,7 +19,7 @@ struct Card: View {
         GridItem(.flexible(), alignment: .topLeading)
         ]
     
-    let pictureHeight: CGFloat = 250
+    let pictureHeight: CGFloat = 100
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15){

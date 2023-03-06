@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    
+    @Binding var showSettings: Bool
     @AppStorage("userStatus") private var price = "priceStudent"
     @AppStorage("userLocation") private var location = "Würzburg"
     
@@ -22,14 +22,6 @@ struct SettingsView: View {
                                 Text("Student").tag("priceStudent")
                                 Text("Beschäftigter").tag("priceEmployee")
                                 Text("Gast").tag("priceGuest")
-                            }
-                        }
-                        List {
-                            Picker("📍 Studienort", selection: $location) {
-                                Text("Würzburg").tag("Würzburg")
-                                Text("Schweinfurt").tag("Schweinfurt")
-                                Text("Bamberg").tag("Bamberg")
-                                Text("Aschaffenburg").tag("Aschaffenburg")
                             }
                         }
                     }
@@ -51,12 +43,29 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Einstellungen")
+            .navigationBarItems(
+                trailing: Button(action: {
+                    self.showSettings.toggle()
+                }, label: {
+                    Image(systemName: "xmark.circle")
+                }))
         }
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
+struct BindingViewExamplePreviewContainer_2 : View {
+     @State
+     private var value = false
+
+     var body: some View {
+          SettingsView(showSettings: $value)
+     }
+}
+
+#if DEBUG
+struct BindingViewExample_2_Previews : PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        BindingViewExamplePreviewContainer_2()
     }
 }
+#endif

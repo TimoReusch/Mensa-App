@@ -44,6 +44,8 @@
 		4BBA03B42959279B00833437 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA03B32959279B00833437 /* Card.swift */; };
 		4BBD4BF7290B3DA900676191 /* Canteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD4BF6290B3DA900676191 /* Canteen.swift */; };
 		4BBD4BF9290B3E6D00676191 /* OpeningHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD4BF8290B3E6D00676191 /* OpeningHours.swift */; };
+		4BD1AFBC29B55FD600B13F21 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1AFBB29B55FD600B13F21 /* FeedView.swift */; };
+		4BD1AFBE29B5643600B13F21 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1AFBD29B5643600B13F21 /* FeedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,8 @@
 		4BBA03B32959279B00833437 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4BBD4BF6290B3DA900676191 /* Canteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Canteen.swift; path = ../ViewModels/Canteen.swift; sourceTree = "<group>"; };
 		4BBD4BF8290B3E6D00676191 /* OpeningHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHours.swift; sourceTree = "<group>"; };
+		4BD1AFBB29B55FD600B13F21 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		4BD1AFBD29B5643600B13F21 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 		4B32A252295A8C9A003629AA /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				4BD1AFBF29B568FF00B13F21 /* Feed */,
 				4B32A250295A8B9B003629AA /* Canteens */,
 				4B82787B28B7B73F00E27584 /* CafeteriasView.swift */,
 				4B82787D28B7B76B00E27584 /* FavoriteView.swift */,
@@ -182,8 +187,6 @@
 		4B32A253295A8CB0003629AA /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				4B82787F28B7B77700E27584 /* SettingsView.swift */,
-				4B53EF2028CEA6D3004A17B8 /* AboutView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				4B33930F290CABF500A3B458 /* ViewModel.swift */,
+				4BD1AFBD29B5643600B13F21 /* FeedViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -290,6 +294,16 @@
 				4B331CE828F2FA20005B9E5C /* Helpers.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		4BD1AFBF29B568FF00B13F21 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				4BD1AFBB29B55FD600B13F21 /* FeedView.swift */,
+				4B82787F28B7B77700E27584 /* SettingsView.swift */,
+				4B53EF2028CEA6D3004A17B8 /* AboutView.swift */,
+			);
+			path = Feed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BD1AFBC29B55FD600B13F21 /* FeedView.swift in Sources */,
 				4B82785128B7B58700E27584 /* ContentView.swift in Sources */,
 				4B331CE928F2FA20005B9E5C /* Helpers.swift in Sources */,
 				4B82787C28B7B73F00E27584 /* CafeteriasView.swift in Sources */,
@@ -452,6 +467,7 @@
 				4B32A24E295A83C7003629AA /* UnderlineModifier.swift in Sources */,
 				4B82788028B7B77700E27584 /* SettingsView.swift in Sources */,
 				4B32A24A295A837A003629AA /* RectPreference.swift in Sources */,
+				4BD1AFBE29B5643600B13F21 /* FeedViewModel.swift in Sources */,
 				4B82787E28B7B76B00E27584 /* FavoriteView.swift in Sources */,
 				4B1184C028C0291100CD8275 /* LottieView.swift in Sources */,
 				4BBD4BF9290B3E6D00676191 /* OpeningHours.swift in Sources */,
