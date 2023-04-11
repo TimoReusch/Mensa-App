@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct CanteenDetail: View {
+struct FoodProviderDetailView: View {
     @State private var descriptionExpanded: Bool = false
     @State private var selectedDay = 0
     
-    var canteen: Canteen
+    var foodProvider: FoodProvider
     let weekdays: [String] = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag"]
     
     var body: some View {
@@ -20,7 +20,7 @@ struct CanteenDetail: View {
                 GeometryReader{proxy in
                     let size = proxy.size
                     
-                    Image("\(canteen.firebaseId)")
+                    Image("burse_am_studentenhaus_wuerzburg")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: size.width, height: 250)
@@ -33,14 +33,16 @@ struct CanteenDetail: View {
                     .black.opacity(0.1),
                     .clear
                 ], startPoint: .top, endPoint: .bottom)
+
             }
             
             VStack(alignment: .leading){
-                Text(canteen.type)
+                Text(foodProvider.type)
                     .font(.callout)
                     .fontWeight(.semibold)
+                    .padding(.top)
                 
-                Text(canteen.name)
+                Text(foodProvider.name)
                     .font(.largeTitle.bold())
                     .multilineTextAlignment(.leading)
             }
@@ -49,7 +51,7 @@ struct CanteenDetail: View {
             
             VStack{
                 DisclosureGroup("Über diese Mensa", isExpanded: $descriptionExpanded) {
-                    Text(canteen.description_de)
+                    Text(foodProvider.description_de)
                         .padding(.top)
                 }
                 .tint(.blue)
@@ -78,9 +80,12 @@ struct CanteenDetail: View {
 }
 
 
-struct CanteenDetail_Previews: PreviewProvider {
+struct FoodProviderDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CanteenDetail(canteen: Canteen(
+        let menuItem: Meal = TestMeals().meal1
+        let menuItem2: Meal = TestMeals().meal2
+        
+        FoodProviderDetailView(foodProvider: FoodProvider(
             id: UUID(),
             firebaseId: 10,
             documentId: "mensateria_campus_hubland_nord_wuerzburg",
@@ -98,6 +103,24 @@ struct CanteenDetail_Previews: PreviewProvider {
                 wednesday: OpeningHoursItem(id: UUID(), opensAt: "10.00", closesAt: "14.00", getFoodTill: "13:30", isOpen: true),
                 thursday: OpeningHoursItem(id: UUID(), opensAt: "10.00", closesAt: "14.00", getFoodTill: "13:30", isOpen: true),
                 friday: OpeningHoursItem(id: UUID(), opensAt: "", closesAt: "", getFoodTill: "", isOpen: false)
-            )))
+            ),
+            menusCurrentWeek: Menus(
+                id: UUID(),
+                monday: menuItem,
+                tuesday: menuItem,
+                wednesday: menuItem,
+                thursday: menuItem,
+                friday: menuItem
+            ),
+            menusNextWeek: Menus(
+                id: UUID(),
+                monday: menuItem2,
+                tuesday: menuItem2,
+                wednesday: menuItem2,
+                thursday: menuItem2,
+                friday: menuItem2
+            )
+        ))
+        
     }
 }

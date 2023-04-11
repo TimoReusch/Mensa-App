@@ -11,7 +11,6 @@
 		4B32A24A295A837A003629AA /* RectPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B32A249295A837A003629AA /* RectPreference.swift */; };
 		4B32A24C295A83A8003629AA /* SegmentedControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B32A24B295A83A8003629AA /* SegmentedControlView.swift */; };
 		4B32A24E295A83C7003629AA /* UnderlineModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B32A24D295A83C7003629AA /* UnderlineModifier.swift */; };
-		4B32A255295A8D2E003629AA /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B32A254295A8D2E003629AA /* Meal.swift */; };
 		4B331CE928F2FA20005B9E5C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B331CE828F2FA20005B9E5C /* Helpers.swift */; };
 		4B33930C290CAB1200A3B458 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B33930B290CAB1200A3B458 /* GoogleService-Info.plist */; };
 		4B33930D290CAB1200A3B458 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B33930B290CAB1200A3B458 /* GoogleService-Info.plist */; };
@@ -22,13 +21,6 @@
 		4B3B67C728BC372F00525DCE /* GlobalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3B67C628BC372F00525DCE /* GlobalStore.swift */; };
 		4B53EF1F28CE98DB004A17B8 /* 19705-chef.json in Resources */ = {isa = PBXBuildFile; fileRef = 4B53EF1E28CE98DB004A17B8 /* 19705-chef.json */; };
 		4B53EF2128CEA6D3004A17B8 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B53EF2028CEA6D3004A17B8 /* AboutView.swift */; };
-		4B6630242904C80A00944888 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4B6630232904C80A00944888 /* FirebaseAnalytics */; };
-		4B6630262904C80A00944888 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4B6630252904C80A00944888 /* FirebaseAnalyticsSwift */; };
-		4B6630282904C80A00944888 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 4B6630272904C80A00944888 /* FirebaseAppCheck */; };
-		4B66302A2904C80A00944888 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4B6630292904C80A00944888 /* FirebaseCrashlytics */; };
-		4B66302C2904C80A00944888 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4B66302B2904C80A00944888 /* FirebaseFirestore */; };
-		4B66302E2904C80A00944888 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4B66302D2904C80A00944888 /* FirebaseFirestoreSwift */; };
-		4B6630312904C88500944888 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4B6630302904C88500944888 /* Lottie */; };
 		4B82784F28B7B58700E27584 /* MensaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82784E28B7B58700E27584 /* MensaApp.swift */; };
 		4B82785128B7B58700E27584 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82785028B7B58700E27584 /* ContentView.swift */; };
 		4B82785328B7B58800E27584 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B82785228B7B58800E27584 /* Assets.xcassets */; };
@@ -36,16 +28,19 @@
 		4B82786028B7B58800E27584 /* MensaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82785F28B7B58800E27584 /* MensaTests.swift */; };
 		4B82786A28B7B58800E27584 /* MensaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82786928B7B58800E27584 /* MensaUITests.swift */; };
 		4B82786C28B7B58800E27584 /* MensaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82786B28B7B58800E27584 /* MensaUITestsLaunchTests.swift */; };
-		4B82787C28B7B73F00E27584 /* CafeteriasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82787B28B7B73F00E27584 /* CafeteriasView.swift */; };
-		4B82787E28B7B76B00E27584 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82787D28B7B76B00E27584 /* FavoriteView.swift */; };
 		4B82788028B7B77700E27584 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B82787F28B7B77700E27584 /* SettingsView.swift */; };
-		4BBA03B029591E0E00833437 /* CanteensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA03AF29591E0E00833437 /* CanteensView.swift */; };
-		4BBA03B22959223B00833437 /* CanteenDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA03B12959223B00833437 /* CanteenDetail.swift */; };
-		4BBA03B42959279B00833437 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA03B32959279B00833437 /* Card.swift */; };
-		4BBD4BF7290B3DA900676191 /* Canteen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD4BF6290B3DA900676191 /* Canteen.swift */; };
-		4BBD4BF9290B3E6D00676191 /* OpeningHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD4BF8290B3E6D00676191 /* OpeningHours.swift */; };
+		4BBA03B22959223B00833437 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA03B12959223B00833437 /* DetailView.swift */; };
+		4BBA03B42959279B00833437 /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBA03B32959279B00833437 /* CardComponent.swift */; };
+		4BBD4BF7290B3DA900676191 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBD4BF6290B3DA900676191 /* DataModel.swift */; };
 		4BD1AFBC29B55FD600B13F21 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1AFBB29B55FD600B13F21 /* FeedView.swift */; };
 		4BD1AFBE29B5643600B13F21 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD1AFBD29B5643600B13F21 /* FeedViewModel.swift */; };
+		4BD7202F29E4DAEF00EBEC1D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4BD7202E29E4DAEF00EBEC1D /* FirebaseCrashlytics */; };
+		4BD7203129E4DAEF00EBEC1D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4BD7203029E4DAEF00EBEC1D /* FirebaseFirestore */; };
+		4BD7203329E4DAEF00EBEC1D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4BD7203229E4DAEF00EBEC1D /* FirebaseFirestoreSwift */; };
+		4BD7203629E4DB2400EBEC1D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 4BD7203529E4DB2400EBEC1D /* Lottie */; };
+		4BF333B029E4A0BE008B6D55 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF333AF29E4A0BE008B6D55 /* MenuView.swift */; };
+		4BF333B229E4AB32008B6D55 /* BulletListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF333B129E4AB32008B6D55 /* BulletListView.swift */; };
+		4BF333B429E4AE64008B6D55 /* GlobalTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF333B329E4AE64008B6D55 /* GlobalTestData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +65,6 @@
 		4B32A249295A837A003629AA /* RectPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectPreference.swift; sourceTree = "<group>"; };
 		4B32A24B295A83A8003629AA /* SegmentedControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlView.swift; sourceTree = "<group>"; };
 		4B32A24D295A83C7003629AA /* UnderlineModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineModifier.swift; sourceTree = "<group>"; };
-		4B32A254295A8D2E003629AA /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		4B331CE828F2FA20005B9E5C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		4B33930B290CAB1200A3B458 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4B33930F290CABF500A3B458 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -87,17 +81,16 @@
 		4B82786528B7B58800E27584 /* MensaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MensaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B82786928B7B58800E27584 /* MensaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaUITests.swift; sourceTree = "<group>"; };
 		4B82786B28B7B58800E27584 /* MensaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MensaUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		4B82787B28B7B73F00E27584 /* CafeteriasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeteriasView.swift; sourceTree = "<group>"; };
-		4B82787D28B7B76B00E27584 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		4B82787F28B7B77700E27584 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4BA2ABB028F0962000D108C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		4BBA03AF29591E0E00833437 /* CanteensView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteensView.swift; sourceTree = "<group>"; };
-		4BBA03B12959223B00833437 /* CanteenDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanteenDetail.swift; sourceTree = "<group>"; };
-		4BBA03B32959279B00833437 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		4BBD4BF6290B3DA900676191 /* Canteen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Canteen.swift; path = ../ViewModels/Canteen.swift; sourceTree = "<group>"; };
-		4BBD4BF8290B3E6D00676191 /* OpeningHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHours.swift; sourceTree = "<group>"; };
+		4BBA03B12959223B00833437 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		4BBA03B32959279B00833437 /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
+		4BBD4BF6290B3DA900676191 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		4BD1AFBB29B55FD600B13F21 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		4BD1AFBD29B5643600B13F21 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		4BF333AF29E4A0BE008B6D55 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		4BF333B129E4AB32008B6D55 /* BulletListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletListView.swift; sourceTree = "<group>"; };
+		4BF333B329E4AE64008B6D55 /* GlobalTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalTestData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,13 +98,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B6630262904C80A00944888 /* FirebaseAnalyticsSwift in Frameworks */,
-				4B6630312904C88500944888 /* Lottie in Frameworks */,
-				4B66302A2904C80A00944888 /* FirebaseCrashlytics in Frameworks */,
-				4B6630282904C80A00944888 /* FirebaseAppCheck in Frameworks */,
-				4B66302C2904C80A00944888 /* FirebaseFirestore in Frameworks */,
-				4B6630242904C80A00944888 /* FirebaseAnalytics in Frameworks */,
-				4B66302E2904C80A00944888 /* FirebaseFirestoreSwift in Frameworks */,
+				4BD7202F29E4DAEF00EBEC1D /* FirebaseCrashlytics in Frameworks */,
+				4BD7203129E4DAEF00EBEC1D /* FirebaseFirestore in Frameworks */,
+				4BD7203329E4DAEF00EBEC1D /* FirebaseFirestoreSwift in Frameworks */,
+				4BD7203629E4DB2400EBEC1D /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,21 +141,9 @@
 			path = SegmentedControl;
 			sourceTree = "<group>";
 		};
-		4B32A250295A8B9B003629AA /* Canteens */ = {
-			isa = PBXGroup;
-			children = (
-				4BBA03AF29591E0E00833437 /* CanteensView.swift */,
-				4BBA03B32959279B00833437 /* Card.swift */,
-				4BBA03B12959223B00833437 /* CanteenDetail.swift */,
-				4B32A254295A8D2E003629AA /* Meal.swift */,
-			);
-			path = Canteens;
-			sourceTree = "<group>";
-		};
 		4B32A251295A8BDA003629AA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4B3B67BF28BAECFB00525DCE /* DataModels */,
 				4BBD4BF3290B3D2400676191 /* ViewModels */,
 				4BBD4BF4290B3D5D00676191 /* Utils */,
 			);
@@ -176,19 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				4BD1AFBF29B568FF00B13F21 /* Feed */,
-				4B32A250295A8B9B003629AA /* Canteens */,
-				4B82787B28B7B73F00E27584 /* CafeteriasView.swift */,
-				4B82787D28B7B76B00E27584 /* FavoriteView.swift */,
-				4B32A253295A8CB0003629AA /* Settings */,
 			);
 			path = Tabs;
-			sourceTree = "<group>";
-		};
-		4B32A253295A8CB0003629AA /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		4B331CEC28F4C923005B9E5C /* Components */ = {
@@ -196,17 +163,35 @@
 			children = (
 				4B1184BE28C028F900CD8275 /* LottieAnimations */,
 				4B32A246295A8308003629AA /* SegmentedControl */,
+				4BF333B129E4AB32008B6D55 /* BulletListView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		4B3B67BF28BAECFB00525DCE /* DataModels */ = {
+		4B78651A29BAACCB00FBE400 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				4BBD4BF6290B3DA900676191 /* Canteen.swift */,
-				4BBD4BF8290B3E6D00676191 /* OpeningHours.swift */,
+				4B82787F28B7B77700E27584 /* SettingsView.swift */,
 			);
-			path = DataModels;
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		4B78651B29BAACD200FBE400 /* Legal */ = {
+			isa = PBXGroup;
+			children = (
+				4B53EF2028CEA6D3004A17B8 /* AboutView.swift */,
+			);
+			path = Legal;
+			sourceTree = "<group>";
+		};
+		4B78651D29BAAD2600FBE400 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				4BBD4BF6290B3DA900676191 /* DataModel.swift */,
+				4BBA03B12959223B00833437 /* DetailView.swift */,
+				4BF333AF29E4A0BE008B6D55 /* MenuView.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		4B82784228B7B58700E27584 = {
@@ -272,6 +257,7 @@
 		4B82787828B7B71300E27584 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4BF333B329E4AE64008B6D55 /* GlobalTestData.swift */,
 				4B32A252295A8C9A003629AA /* Tabs */,
 				4B331CEC28F4C923005B9E5C /* Components */,
 			);
@@ -300,8 +286,10 @@
 			isa = PBXGroup;
 			children = (
 				4BD1AFBB29B55FD600B13F21 /* FeedView.swift */,
-				4B82787F28B7B77700E27584 /* SettingsView.swift */,
-				4B53EF2028CEA6D3004A17B8 /* AboutView.swift */,
+				4BBA03B32959279B00833437 /* CardComponent.swift */,
+				4B78651B29BAACD200FBE400 /* Legal */,
+				4B78651A29BAACCB00FBE400 /* Settings */,
+				4B78651D29BAAD2600FBE400 /* Detail */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -323,13 +311,10 @@
 			);
 			name = Mensa;
 			packageProductDependencies = (
-				4B6630232904C80A00944888 /* FirebaseAnalytics */,
-				4B6630252904C80A00944888 /* FirebaseAnalyticsSwift */,
-				4B6630272904C80A00944888 /* FirebaseAppCheck */,
-				4B6630292904C80A00944888 /* FirebaseCrashlytics */,
-				4B66302B2904C80A00944888 /* FirebaseFirestore */,
-				4B66302D2904C80A00944888 /* FirebaseFirestoreSwift */,
-				4B6630302904C88500944888 /* Lottie */,
+				4BD7202E29E4DAEF00EBEC1D /* FirebaseCrashlytics */,
+				4BD7203029E4DAEF00EBEC1D /* FirebaseFirestore */,
+				4BD7203229E4DAEF00EBEC1D /* FirebaseFirestoreSwift */,
+				4BD7203529E4DB2400EBEC1D /* Lottie */,
 			);
 			productName = Mensa;
 			productReference = 4B82784B28B7B58700E27584 /* Mensa.app */;
@@ -404,8 +389,8 @@
 			);
 			mainGroup = 4B82784228B7B58700E27584;
 			packageReferences = (
-				4B6630222904C80A00944888 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				4B66302F2904C88500944888 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				4BD7202D29E4DAEF00EBEC1D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				4BD7203429E4DB2400EBEC1D /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 4B82784C28B7B58700E27584 /* Products */;
 			projectDirPath = "";
@@ -456,24 +441,22 @@
 				4BD1AFBC29B55FD600B13F21 /* FeedView.swift in Sources */,
 				4B82785128B7B58700E27584 /* ContentView.swift in Sources */,
 				4B331CE928F2FA20005B9E5C /* Helpers.swift in Sources */,
-				4B82787C28B7B73F00E27584 /* CafeteriasView.swift in Sources */,
-				4BBA03B029591E0E00833437 /* CanteensView.swift in Sources */,
 				4B53EF2128CEA6D3004A17B8 /* AboutView.swift in Sources */,
 				4B339310290CABF500A3B458 /* ViewModel.swift in Sources */,
 				4B3B67C728BC372F00525DCE /* GlobalStore.swift in Sources */,
-				4BBA03B42959279B00833437 /* Card.swift in Sources */,
+				4BBA03B42959279B00833437 /* CardComponent.swift in Sources */,
+				4BF333B029E4A0BE008B6D55 /* MenuView.swift in Sources */,
+				4BF333B429E4AE64008B6D55 /* GlobalTestData.swift in Sources */,
 				4B82784F28B7B58700E27584 /* MensaApp.swift in Sources */,
-				4B32A255295A8D2E003629AA /* Meal.swift in Sources */,
 				4B32A24E295A83C7003629AA /* UnderlineModifier.swift in Sources */,
+				4BF333B229E4AB32008B6D55 /* BulletListView.swift in Sources */,
 				4B82788028B7B77700E27584 /* SettingsView.swift in Sources */,
 				4B32A24A295A837A003629AA /* RectPreference.swift in Sources */,
 				4BD1AFBE29B5643600B13F21 /* FeedViewModel.swift in Sources */,
-				4B82787E28B7B76B00E27584 /* FavoriteView.swift in Sources */,
 				4B1184C028C0291100CD8275 /* LottieView.swift in Sources */,
-				4BBD4BF9290B3E6D00676191 /* OpeningHours.swift in Sources */,
 				4B32A24C295A83A8003629AA /* SegmentedControlView.swift in Sources */,
-				4BBD4BF7290B3DA900676191 /* Canteen.swift in Sources */,
-				4BBA03B22959223B00833437 /* CanteenDetail.swift in Sources */,
+				4BBD4BF7290B3DA900676191 /* DataModel.swift in Sources */,
+				4BBA03B22959223B00833437 /* DetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,58 +794,43 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4B6630222904C80A00944888 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		4BD7202D29E4DAEF00EBEC1D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				minimumVersion = 10.0.0;
 			};
 		};
-		4B66302F2904C88500944888 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+		4BD7203429E4DB2400EBEC1D /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				minimumVersion = 4.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4B6630232904C80A00944888 /* FirebaseAnalytics */ = {
+		4BD7202E29E4DAEF00EBEC1D /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4B6630222904C80A00944888 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		4B6630252904C80A00944888 /* FirebaseAnalyticsSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4B6630222904C80A00944888 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsSwift;
-		};
-		4B6630272904C80A00944888 /* FirebaseAppCheck */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4B6630222904C80A00944888 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAppCheck;
-		};
-		4B6630292904C80A00944888 /* FirebaseCrashlytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 4B6630222904C80A00944888 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 4BD7202D29E4DAEF00EBEC1D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
 		};
-		4B66302B2904C80A00944888 /* FirebaseFirestore */ = {
+		4BD7203029E4DAEF00EBEC1D /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4B6630222904C80A00944888 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 4BD7202D29E4DAEF00EBEC1D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		4B66302D2904C80A00944888 /* FirebaseFirestoreSwift */ = {
+		4BD7203229E4DAEF00EBEC1D /* FirebaseFirestoreSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4B6630222904C80A00944888 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 4BD7202D29E4DAEF00EBEC1D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
 		};
-		4B6630302904C88500944888 /* Lottie */ = {
+		4BD7203529E4DB2400EBEC1D /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4B66302F2904C88500944888 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			package = 4BD7203429E4DB2400EBEC1D /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */

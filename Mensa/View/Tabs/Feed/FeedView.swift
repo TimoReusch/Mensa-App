@@ -22,11 +22,15 @@ struct FeedView: View {
                     Spacer()
                 }
                 
-                Card(type: "Mensa", title: "Mensastraße", todaysOpeningHours: OpeningHoursItem(id: UUID(), opensAt: "10:00", closesAt: "12:00", getFoodTill: "11:30", isOpen: true), additionalInfo: "Wegen Krankheit geschlossen", imageName: "burse_am_studentenhaus_wuerzburg")
+                NavigationLink{
+                    // FoodProviderDetailView(id: …)
+                } label: {
+                    Card(type: "Mensa", title: "Mensastraße", todaysOpeningHours: OpeningHoursItem(id: UUID(), opensAt: "10:00", closesAt: "12:00", getFoodTill: "11:30", isOpen: true), additionalInfo: "Wegen Krankheit geschlossen", imageName: "burse_am_studentenhaus_wuerzburg")
+                }
             }
             .navigationTitle("Heute")
-            .navigationDestination(for: Canteen.self) { canteen in
-                CanteenDetail(canteen: canteen)
+            .navigationDestination(for: FoodProvider.self) { foodProvider in
+                FoodProviderDetailView(foodProvider: foodProvider)
             }
             .navigationBarItems(
                 leading: Button(action: {

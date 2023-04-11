@@ -8,9 +8,9 @@
 import Foundation
 import FirebaseFirestore
 
+/*
 class ViewModel: ObservableObject {
     @Published var canteens = [Canteen]()
-    @Published var meals = [Meal]()
     
     func getCanteens(location: String?){
         let db = Firestore.firestore()
@@ -71,3 +71,4 @@ class ViewModel: ObservableObject {
         }
     }
 }
+*/
