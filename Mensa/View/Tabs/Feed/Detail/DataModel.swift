@@ -54,11 +54,11 @@ struct OpeningHoursItem: Identifiable {
 
 struct Menus: Identifiable {
     var id: UUID
-    let monday: Meal
-    let tuesday: Meal
-    let wednesday: Meal
-    let thursday: Meal
-    let friday: Meal
+    let monday: [Meal]
+    let tuesday: [Meal]
+    let wednesday: [Meal]
+    let thursday: [Meal]
+    let friday: [Meal]
 }
 
 struct Meal: Identifiable {
@@ -68,7 +68,7 @@ struct Meal: Identifiable {
     var name: String
     var allergens: [String]
     var ingredients: String
+    var priceStudent: String
     var priceEmployee: String
-    var priceStundent: String
     var priceGuest: String
 }

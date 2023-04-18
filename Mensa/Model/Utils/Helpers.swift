@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 func todaysOpeningHours(openingHours: OpeningHours) -> OpeningHoursItem{
     let dateFormatter = DateFormatter()
@@ -40,7 +41,7 @@ func convertToSnakeCase(text: String) -> String{
     var result: String = ""
     
     for char in text.lowercased(){
-        switch char{
+        switch char {
         case "ä":
             result.append("ae")
             
@@ -58,10 +59,50 @@ func convertToSnakeCase(text: String) -> String{
             
         case "ß":
             result.append("ss")
-        
+            
         default:
             result.append(char)
         }
     }
     return result
+}
+
+func convertIngredientsToEmoji(text: String) -> String{
+    switch text {
+    case "Alkohol":
+        return "🍸"
+        
+    case "Fleischlos":
+        return "🥒"
+        
+    case "Vegan":
+        return "🌱"
+        
+    case "Kalb":
+        return "🐂"
+        
+    case "Rind":
+        return "🐄"
+        
+    case "Wild":
+        return "🐗"
+        
+    case "Fisch":
+        return "🐡"
+        
+    case "Geflügel":
+        return "🐓"
+        
+    case "Lamm":
+        return "🐑"
+        
+    case "Schwein":
+        return "🐖"
+        
+    case "Vorderschinken":
+        return "🍗"
+        
+    default:
+        return ""
+    }
 }

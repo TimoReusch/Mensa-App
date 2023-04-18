@@ -23,7 +23,7 @@ struct FeedView: View {
                 }
                 
                 NavigationLink{
-                    // FoodProviderDetailView(id: …)
+                    FoodProviderDetailView(foodProvider: TestFoodProviders().foodProvider1)
                 } label: {
                     Card(type: "Mensa", title: "Mensastraße", todaysOpeningHours: OpeningHoursItem(id: UUID(), opensAt: "10:00", closesAt: "12:00", getFoodTill: "11:30", isOpen: true), additionalInfo: "Wegen Krankheit geschlossen", imageName: "burse_am_studentenhaus_wuerzburg")
                 }

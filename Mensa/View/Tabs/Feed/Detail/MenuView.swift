@@ -14,19 +14,18 @@ struct MenuView: View {
         Grid(alignment: .top, horizontalSpacing: 1, verticalSpacing: 1) {
             ForEach(meals) { meal in
                 GridRow {
-                    Text("🌱")
+                    Text(convertIngredientsToEmoji(text: meal.ingredients))
                     VStack(alignment: .leading){
                         Text(meal.name)
                             .bold()
                             .multilineTextAlignment(.leading)
-                        Text("Enthält:")
+                        
+                        Text("Enthält: \(meal.allergens.joined(separator: ", "))")
                             .padding(.top, 0.05)
-                            .foregroundColor(.secondary)
-                        BulletListView(listItems: meal.allergens)
                             .foregroundColor(.secondary)
                     }
                     .fixedSize(horizontal: false, vertical: true)
-                    Text(meal.priceStundent)
+                    Text(meal.priceStudent)
                 }
                 .padding()
                 Divider()
