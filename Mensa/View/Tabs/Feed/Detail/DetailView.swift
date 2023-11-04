@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct FoodProviderDetailView: View {
     @State private var descriptionExpanded: Bool = false
@@ -31,8 +32,10 @@ struct FoodProviderDetailView: View {
                 }.frame(height: 210)
                 
                 DisclosureGroup("Über diese Mensa", isExpanded: $descriptionExpanded) {
-                    Text(foodProvider.description_de)
-                        .padding(.top)
+                    VStack{
+                        Text(foodProvider.description_de)
+                    }.padding(.top)
+                    
                 }
                 .tint(Color("logo_green"))
                 .padding()
